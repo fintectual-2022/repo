@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
-import {Tender} from "./schema";
+import {Tender} from "./opentenderSchema";
+import {GraphSchema, GraphLink} from "./schema";
 import { useStorage } from '@vueuse/core'
 
 export type IState = {
@@ -45,6 +46,34 @@ export const useMainStore = async () => {
 										randomTender = this.tenders[Math.floor(Math.random()*this.tenders.length)]
 								} while(this.dislikedTenders.has(randomTender.id) || this.likedTenders.has(randomTender.id))
 								return randomTender
+						},
+						calculateGraph(): GraphSchema {
+
+								const masterNode = {
+										id: 'pog',
+										name: `${this.likedTenders.size} Liked Tenders`
+								}
+
+								const nodes = [...this.likedTenders].map((id: string) => {
+										// hydrate from data
+										return this.tenders.find(tender => id === tender.id)
+								})
+								nodes.push(masterNode)
+								// create a connection from pog to each node
+
+								const links: GraphLink[] = []
+								for(const node of nodes){
+										if (node.id !== 'pog') // skip self-refference
+										links.push({
+												source: node.id,
+												target: 'pog'
+												})
+								}
+
+								return {
+									nodes,
+									links
+								}
 						}
 				}
 

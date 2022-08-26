@@ -5,6 +5,8 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import ForceGraph from 'force-graph'
+import {useMainStore} from "../store";
+const store = await useMainStore()
 onMounted(()=>{
   const canvas = document.getElementById('graph')
 
@@ -12,23 +14,12 @@ onMounted(()=>{
 
 
   if(canvas) {
-    // Random tree
-    const N = 300;
-    const gData = {
-      nodes: [...Array(N).keys()].map(i => ({id: i})),
-      links: [...Array(N).keys()]
-          .filter(id => id)
-          .map(id => ({
-            source: id,
-            target: Math.round(Math.random() * (id - 1))
-          }))
-    };
     const Graph = new ForceGraph()(canvas)
       .linkDirectionalParticles(2)
       .warmupTicks(10)
       .width(canvas.clientWidth)
       .centerAt( 0,0)
-      .graphData(gData)
+      .graphData(store.calculateGraph)
   }
 })
 </script>
