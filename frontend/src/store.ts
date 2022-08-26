@@ -14,12 +14,16 @@ export const useMainStore = defineStore({
 
 
 		// --- boilerplate typescript from <https://dev.to/carlomigueldy/getting-started-with-vue-3-pinia-store-typescript-by-building-a-grocery-list-app-19km>
-		// actions: {
-		// 		createNewItem(item: Item) {
-		// 				if (!item) return;
-		//
-		// 				this.items.push(item);
-		// 		},
+		actions: {
+				addTender(tender:Tender) {
+						if (!tender) return;
+						this.tenders.push(tender);
+				},
+				async fetchData() {
+					const data = await fetch('data-eu-2021.json')
+					this.tenders = await data.json()
+				},
+		}
 		//
 		// 		updateItem(id: string, payload: Item) {
 		// 				if (!id || !payload) return;
