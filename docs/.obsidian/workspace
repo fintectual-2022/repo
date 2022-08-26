@@ -7,8 +7,10 @@
         "id": "dac193f840bdabce",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "excalidraw",
+          "state": {
+            "file": "Excalidraw/Drawing 2022-08-26 19.46.40.excalidraw.md"
+          }
         }
       }
     ],
@@ -89,6 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Excalidraw/Drawing 2022-08-26 19.46.40.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Excalidraw/Drawing 2022-08-26 19.46.40.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +130,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Excalidraw/Drawing 2022-08-26 19.46.40.excalidraw.md"
+              }
             }
           },
           {
@@ -147,15 +153,15 @@
   },
   "active": "dac193f840bdabce",
   "lastOpenFiles": [
+    "Wireframe/User-flow.excalidraw.png",
+    "Wireframe/Untitled.md",
+    "Wireframe/palette.svg",
+    "Wireframe/Match.md",
+    "Wireframe/Homepage.md",
+    "Wireframe/Dashboard.md",
     "Application Overview.md",
     "Learn From The Fittest.md",
     "Hacking.md",
-    "Wireframe/User-flow.excalidraw.png",
-    "Wireframe/palette.svg",
-    "Interface.md",
-    "Random Ideas.md",
-    "Take over the world.md",
-    "tenders.md",
-    "Wireframe/Homepage.md"
+    "Interface.md"
   ]
 }

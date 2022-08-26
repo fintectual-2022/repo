@@ -15,6 +15,7 @@ const hasWinningBid = tender?.lots && tender.lots.some(lot => {
 })
 import { ref} from "vue";
 import type { Ref } from 'vue'
+import Buyer from "./Tender/Buyer.vue";
 </script>
 
 <template lang="pug">
@@ -26,6 +27,17 @@ import type { Ref } from 'vue'
       h2 {{ tender.title }}
     .column
       p {{ tender.description }}
+  .row
+    .column
+      p {{ tender.procedureType }}
+    .column
+      p {{ tender.nationalProcedureType }}
+  //.row
+  //  .column
+  //    pre {{tender.documents}}
+  //.row(v-if="tender.furtherInformationProvider")
+  .column
+    pre {{tender.buyers}}
   //.row
   //  p {{ !!tender.bidDeadline ? format(new Date(tender.bidDeadline), 'dd/MM/yyyy') : 'No bidDeadline' }}
   //.row(v-if="!!winningBid")
