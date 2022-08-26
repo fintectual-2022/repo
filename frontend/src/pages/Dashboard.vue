@@ -10,9 +10,7 @@ const store = await useMainStore()
 onMounted(()=>{
   const canvas = document.getElementById('graph')
 
-  // get screen center
-
-
+  // TODO: add some way to dispose of this when the element is unmounted.
   if(canvas) {
     const Graph = new ForceGraph()(canvas)
       .linkDirectionalParticles(2)

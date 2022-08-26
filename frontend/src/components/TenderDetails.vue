@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type {Tender, Bid} from "../schema";
+import type {Tender, Bid} from "../opentenderSchema";
 interface Props {
   template: Tender;
 }

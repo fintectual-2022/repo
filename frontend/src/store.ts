@@ -5,7 +5,7 @@ import { useStorage } from '@vueuse/core'
 
 export type IState = {
 		tenders: Tender[],
-		likedTenders: any,
+		likedTenders: any, // TODO: fix types
 		dislikedTenders: any,
 };
 
@@ -15,6 +15,7 @@ export const useMainStore = async () => {
 				state: () =>
 						({
 								tenders: [],
+								// persisting user data in localstorage
 								likedTenders: useStorage('likes',new Set()),
 								dislikedTenders: useStorage('dislikes',new Set()),
 						} as IState),
@@ -24,7 +25,7 @@ export const useMainStore = async () => {
 								if (!tender) return;
 								this.tenders.push(tender);
 						},
-						async fetchData() {
+						async fetchData() { // this reads the json file from '/public' directory
 								const data = await fetch('data-eu-2021.json')
 								this.tenders = await data.json()
 						},
@@ -47,6 +48,8 @@ export const useMainStore = async () => {
 								} while(this.dislikedTenders.has(randomTender.id) || this.likedTenders.has(randomTender.id))
 								return randomTender
 						},
+
+						// TODO: figure out how the fuck to add options
 						calculateGraph(): GraphSchema {
 
 								const masterNode = {
@@ -54,10 +57,17 @@ export const useMainStore = async () => {
 										name: `${this.likedTenders.size} Liked Tenders`
 								}
 
-								const nodes = [...this.likedTenders].map((id: string) => {
+								const nodes: { id: string, name?: string, value?: any }[] = [...this.likedTenders].map((id: string) => {
 										// hydrate from data
 										return this.tenders.find(tender => id === tender.id)
+								}).map(node => {
+										return {
+												id: node!.id,
+												name: node!.title,
+												value: node
+										}
 								})
+
 								nodes.push(masterNode)
 								// create a connection from pog to each node
 
