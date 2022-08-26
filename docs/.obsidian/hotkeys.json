@@ -1,12 +1,4 @@
 {
   "obsidian-git:pull": [],
-  "obsidian-git:open-git-view": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "*"
-    }
-  ]
+  "obsidian-git:open-git-view": []
 }

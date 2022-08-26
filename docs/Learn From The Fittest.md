@@ -10,3 +10,5 @@ Tender
 				-> Legal entity
 and compile a new collection of Legal entities with the tenders they have won without any lots
 we use this new collection to simulate user data.
+
+
