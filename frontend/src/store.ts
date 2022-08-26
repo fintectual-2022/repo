@@ -6,7 +6,6 @@ export type IState = {
 		tenders: Tender[],
 		likedTenders: any,
 		dislikedTenders: any,
-		ready: boolean,
 };
 
 export const useMainStore = async () => {
@@ -17,7 +16,6 @@ export const useMainStore = async () => {
 								tenders: [],
 								likedTenders: useStorage('likes',new Set()),
 								dislikedTenders: useStorage('dislikes',new Set()),
-								ready: false,
 						} as IState),
 
 				actions: {
@@ -35,13 +33,18 @@ export const useMainStore = async () => {
 						},
 						dislikeTender(id:String){
 								// push the id into the liked set
-								this.likedTenders.add(id)
+								this.dislikedTenders.add(id)
 						}
 				},
 
 				getters: {
 						getRandomTender(): Tender {
-								return this.tenders[Math.floor(Math.random()*this.tenders.length)]
+								// this should make sure we are not displaying the same offer twice.
+								let randomTender
+								do {
+										randomTender = this.tenders[Math.floor(Math.random()*this.tenders.length)]
+								} while(this.dislikedTenders.has(randomTender.id) || this.likedTenders.has(randomTender.id))
+								return randomTender
 						}
 				}
 
@@ -73,10 +76,9 @@ export const useMainStore = async () => {
 		});
 		// wraps the store to automatically fetch tenders when the store is created
 		const s = store();
-		if (s.ready === false && s.tenders.length <= 0) {
+		if (s.tenders.length <= 0) {
 				console.log('fetching tenders')
 				await s.fetchData()
-				s.ready = true
 		}
 		return s
 }

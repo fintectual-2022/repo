@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.1.1",
+    "force-graph": "^1.42.13",
     "milligram": "^1.4.1",
     "pinia": "^2.0.21",
     "vue": "^3.2.37",

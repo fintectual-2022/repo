@@ -3,8 +3,16 @@
   // .slice(0,10) limits the number of items on the page
   TenderDetails(:template="tender")
   .container
-    button(@click="store.likeTender(tender.id)") Like
-    button(@click="store.dislikeTender(tender.id)") Dislike
+    .row
+      .column
+        button(@click="store.likeTender(tender.id)") Like
+      .column
+        button(@click="store.dislikeTender(tender.id)") Dislike
+    .row
+      .column
+        | {{ store.likedTenders }}
+      .column
+        | {{ store.dislikedTenders }}
 </template>
 
 <script setup>
