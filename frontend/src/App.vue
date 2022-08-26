@@ -1,6 +1,13 @@
 <template lang="pug">
-router-view
+.container
+  .row
+    NavBar
+  .row
+    router-view
 </template>
+<script setup>
+import NavBar from './components/NavBar.vue'
+</script>
 
 <style scoped>
 .logo {

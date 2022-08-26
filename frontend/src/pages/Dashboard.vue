@@ -1,5 +1,5 @@
-<template>
-
+<template lang="pug">
+h1 dashboard
 </template>
 
 <script>
