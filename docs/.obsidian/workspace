@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "ad824c86a8649f5c",
+    "type": "split",
+    "children": [
+      {
+        "id": "dfe49a9b739b97b8",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "cd9fb1ccbe318f3e",
+    "type": "split",
+    "children": [
+      {
+        "id": "877a4e24b126bb8e",
+        "type": "tabs",
+        "dimension": 67.03517587939697,
+        "children": [
+          {
+            "id": "1ba074cf4c19f3d5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "a2576bf83887c960",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "32e4a2dc16ad0096",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "77c61c4c9f501be5",
+        "type": "tabs",
+        "dimension": 32.96482412060301,
+        "children": [
+          {
+            "id": "07024cfdae2cabd0",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 411.5
+  },
+  "right": {
+    "id": "27382db7c420f09f",
+    "type": "split",
+    "children": [
+      {
+        "id": "d7547eb917be77d7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a69703ddf55e393",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2247b5e0c3b16651",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "231afee864b07997",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ca9a64f67e22ed5e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md"
+              }
+            }
+          },
+          {
+            "id": "954595d7c3bb678a",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "dfe49a9b739b97b8",
+  "lastOpenFiles": [
+    "LICENSE.md",
+    "Interface.md",
+    "Application Overview.md",
+    "Take over the world.md",
+    "Wireframe/Untitled.md",
+    "README.md",
+    "Hacking.md",
+    "tenders.md",
+    "Random Ideas.md",
+    "Learn From The Fittest.md"
+  ]
+}
