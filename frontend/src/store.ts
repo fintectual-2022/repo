@@ -22,7 +22,7 @@ export const useMainStore = async () => {
 
 				actions: {
 						async fetchData() { // this reads the json file from '/public' directory
-								const data = await fetch('data-eu-2021.json')
+								const data = await fetch('data-cz-2022.json')
 								this.tenders = await data.json()
 						},
 						likeTender(id:String){

@@ -19,6 +19,9 @@ app.use(router)
 import Vue3TouchEvents from 'vue3-touch-events';
 app.use(Vue3TouchEvents, {disableClick: true});
 
+// https://troisjs.github.io
+import { TroisJSVuePlugin } from 'troisjs';
+app.use(TroisJSVuePlugin);
 
 // init app
 app.mount('#app')

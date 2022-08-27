@@ -1,13 +1,11 @@
 <template lang="pug">
-.container
-  .row
-    NavBar
-  .row
-    Suspense
-      router-view
+Suspense
+  template(v-slot:fallback)
+    Loading
+  router-view
 </template>
 <script setup>
-import NavBar from './components/NavBar.vue'
+import Loading from './components/Loading.vue'
 </script>
 
 <style scoped>

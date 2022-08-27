@@ -29,7 +29,7 @@ import Buyer from "./Tender/Buyer.vue";
       p {{ tender.description }}
   .row
     .column
-      p {{ tender.indicators }}
+      p {{ tender.buyers }}
   //.row
   //  p {{ !!tender.bidDeadline ? format(new Date(tender.bidDeadline), 'dd/MM/yyyy') : 'No bidDeadline' }}
   //.row(v-if="!!winningBid")
