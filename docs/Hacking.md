@@ -6,3 +6,8 @@ https://fintectual-hack-the-heat-2022.devpost.com/
 Could probably fall under the Data Analysis umbrella.
 
 optional extra points: learn about the judges and their prefferences
+
+
+TODO:  
+1. make a [[Presentation video]]
+2. submit project on devpost

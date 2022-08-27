@@ -29,15 +29,7 @@ import Buyer from "./Tender/Buyer.vue";
       p {{ tender.description }}
   .row
     .column
-      p {{ tender.procedureType }}
-    .column
-      p {{ tender.nationalProcedureType }}
-  //.row
-  //  .column
-  //    pre {{tender.documents}}
-  //.row(v-if="tender.furtherInformationProvider")
-  .column
-    pre {{tender.buyers}}
+      p {{ tender.indicators }}
   //.row
   //  p {{ !!tender.bidDeadline ? format(new Date(tender.bidDeadline), 'dd/MM/yyyy') : 'No bidDeadline' }}
   //.row(v-if="!!winningBid")

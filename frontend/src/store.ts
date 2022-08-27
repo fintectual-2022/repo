@@ -21,10 +21,6 @@ export const useMainStore = async () => {
 						} as IState),
 
 				actions: {
-						addTender(tender: Tender) {
-								if (!tender) return;
-								this.tenders.push(tender);
-						},
 						async fetchData() { // this reads the json file from '/public' directory
 								const data = await fetch('data-eu-2021.json')
 								this.tenders = await data.json()
@@ -48,6 +44,14 @@ export const useMainStore = async () => {
 								} while(this.dislikedTenders.has(randomTender.id) || this.likedTenders.has(randomTender.id))
 								return randomTender
 						},
+						// // take one or more ID and return full tender object
+						// hydrateIds(t: string[]): Tender[] { // todo: fix type to set (liked+disliked)
+						// 		const data: Tender[] = t!.map((id: string) => {
+						// 				// hydrate from data
+						// 				return this.tenders.find((tender: Tender) => id === tender.id)
+						// 		})
+						// 		return data
+						// },
 
 						// TODO: figure out how the fuck to add options
 						calculateGraph(): GraphSchema {
@@ -56,7 +60,6 @@ export const useMainStore = async () => {
 										id: 'pog',
 										name: `${this.likedTenders.size} Liked Tenders`
 								}
-
 								const nodes: { id: string, name?: string, value?: any }[] = [...this.likedTenders].map((id: string) => {
 										// hydrate from data
 										return this.tenders.find(tender => id === tender.id)
