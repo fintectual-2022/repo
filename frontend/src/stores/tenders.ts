@@ -1,12 +1,12 @@
 import { defineStore } from "pinia";
-import {Tender} from "./opentenderSchema";
-import {GraphSchema, GraphLink} from "./schema";
+import {Tender} from "../opentenderSchema";
+import {GraphSchema, GraphLink} from "../schema";
 import { useStorage } from '@vueuse/core'
 
 export type IState = {
 		tenders: Tender[],
-		likedTenders: any, // TODO: fix types
-		dislikedTenders: any,
+		likedIds: any, // TODO: fix types
+		dislikedIds: any,
 };
 
 export const useMainStore = async () => {
@@ -16,8 +16,8 @@ export const useMainStore = async () => {
 						({
 								tenders: [],
 								// persisting user data in localstorage
-								likedTenders: useStorage('likes',new Set()),
-								dislikedTenders: useStorage('dislikes',new Set()),
+								likedIds: useStorage('likedIds',new Set()),
+								dislikedIds: useStorage('dislikedIds',new Set()),
 						} as IState),
 
 				actions: {
@@ -27,12 +27,13 @@ export const useMainStore = async () => {
 						},
 						likeTender(id:String){
 								// push the id into the liked set
-								this.likedTenders.add(id)
+								this.likedIds.add(id)
 						},
 						dislikeTender(id:String){
 								// push the id into the liked set
-								this.dislikedTenders.add(id)
-						}
+								this.dislikedIds.add(id)
+						},
+
 				},
 
 				getters: {
@@ -41,52 +42,17 @@ export const useMainStore = async () => {
 								let randomTender
 								do {
 										randomTender = this.tenders[Math.floor(Math.random()*this.tenders.length)]
-								} while(this.dislikedTenders.has(randomTender.id) || this.likedTenders.has(randomTender.id))
+								} while(this.dislikedIds.has(randomTender.id) || this.likedIds.has(randomTender.id))
 								return randomTender
 						},
-						// // take one or more ID and return full tender object
-						// hydrateIds(t: string[]): Tender[] { // todo: fix type to set (liked+disliked)
-						// 		const data: Tender[] = t!.map((id: string) => {
-						// 				// hydrate from data
-						// 				return this.tenders.find((tender: Tender) => id === tender.id)
-						// 		})
-						// 		return data
-						// },
-
-						// TODO: figure out how the fuck to add options
-						calculateGraph(): GraphSchema {
-
-								const masterNode = {
-										id: 'pog',
-										name: `${this.likedTenders.size} Liked Tenders`
+						getLikedTenders() : Tender[] | undefined {
+								if(this.likedIds.size <=0){
+										return undefined
 								}
-								const nodes: { id: string, name?: string, value?: any }[] = [...this.likedTenders].map((id: string) => {
-										// hydrate from data
-										return this.tenders.find(tender => id === tender.id)
-								}).map(node => {
-										return {
-												id: node!.id,
-												name: node!.title,
-												value: node
-										}
-								})
+								else { // there are liked tenders present
 
-								nodes.push(masterNode)
-								// create a connection from pog to each node
-
-								const links: GraphLink[] = []
-								for(const node of nodes){
-										if (node.id !== 'pog') // skip self-refference
-										links.push({
-												source: node.id,
-												target: 'pog'
-												})
 								}
 
-								return {
-									nodes,
-									links
-								}
 						}
 				}
 

@@ -17,21 +17,36 @@ import { ref} from "vue";
 import type { Ref } from 'vue'
 import Buyer from "./Tender/Buyer.vue";
 import Indicators from "./Tender/Indicators.vue";
+import Cpvs from "./Tender/Cpvs.vue";
+import Publications from "./Tender/Publications.vue";
+import Documents from "./Tender/Documents.vue";
+import { countryCodeEmoji } from 'country-code-emoji';
 </script>
 
 <template lang="pug">
 .tender(v-if="tender" :class="{'has-winning-bid':  !!hasWinningBid}")
+  h2 {{ countryCodeEmoji(tender.country) }}
   .row
     h2 {{ tender.title }}
   .row
     p {{ tender.description }}
   .row
     p {{ tender?.buyers[0].address.city }}
+  // Category codes
+  section(v-if="!!tender.cpvs && tender.cpvs.length >= 0")
+    Cpvs(:template="tender.cpvs")
+  // Buyer
   section(v-if="!!tender.buyers && tender.buyers.length >= 0")
     Buyer(:template="tender.buyers")
-
+  // Indicators
   section(v-if="!!tender.indicators && tender.indicators.length >= 0")
     Indicators(:template="tender.indicators")
+  // Publications
+  section(v-if="!!tender.publications && tender.publications.length >= 0")
+    Publications(:template="tender.publications")
+  // Documents
+  section(v-if="!!tender.documents && tender.documents.length >= 0")
+    Documents(:template="tender.documents")
   //.row
   //  p {{ !!tender.bidDeadline ? format(new Date(tender.bidDeadline), 'dd/MM/yyyy') : 'No bidDeadline' }}
   //.row(v-if="!!winningBid")
