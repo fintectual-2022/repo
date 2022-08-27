@@ -16,17 +16,22 @@ const hasWinningBid = tender?.lots && tender.lots.some(lot => {
 import { ref} from "vue";
 import type { Ref } from 'vue'
 import Buyer from "./Tender/Buyer.vue";
+import Indicators from "./Tender/Indicators.vue";
 </script>
 
 <template lang="pug">
-.container(v-if="tender" :class="{'has-winning-bid':  !!hasWinningBid}")
+.tender(v-if="tender" :class="{'has-winning-bid':  !!hasWinningBid}")
   .row
     h2 {{ tender.title }}
   .row
     p {{ tender.description }}
   .row
-    .column
-      p {{ tender?.buyers[0].address.city }}
+    p {{ tender?.buyers[0].address.city }}
+  section(v-if="!!tender.buyers && tender.buyers.length >= 0")
+    Buyer(:template="tender.buyers")
+
+  section(v-if="!!tender.indicators && tender.indicators.length >= 0")
+    Indicators(:template="tender.indicators")
   //.row
   //  p {{ !!tender.bidDeadline ? format(new Date(tender.bidDeadline), 'dd/MM/yyyy') : 'No bidDeadline' }}
   //.row(v-if="!!winningBid")
@@ -36,11 +41,7 @@ import Buyer from "./Tender/Buyer.vue";
 </template>
 
 <style lang="stylus" scoped>
-.container
-  margin 1em
-.has-winning-bid {
-  border 1px solid #94B0DA
-  background-color: #F96E46
-}
-
+.tender
+  width 100%
+  padding 1em
 </style>

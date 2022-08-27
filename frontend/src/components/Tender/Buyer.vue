@@ -1,17 +1,24 @@
 <template lang="pug">
-pre
-  | {{ buyer }}
+.buyers(v-for="buyer of buyers")
+  header
+    h2 {{ buyer?.buyerType }}
+    h2 {{ buyer?.name }}
+    h2 {{ buyer?.contactName }}
+    h2 {{ buyer?.contactPoint }}
+    h2 {{ buyer?.phone }}
+    h2 {{ buyer?.mainActivities }}
+    h2 {{ buyer?.address }}
 </template>
 
 <script lang="ts" setup>
-import type { Buyer } from "../../schema";
+import type { Buyer4 } from "../../opentenderSchema";
 interface Props {
-  template: Buyer;
+  template: Buyer4[];
 }
 const props = withDefaults(defineProps<Props>(),{})
-const buyer = props.template
+const buyers = props.template
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 
 </style>

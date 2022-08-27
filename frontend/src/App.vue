@@ -12,7 +12,7 @@ import Loading from './components/Loading.vue'
 @import "assets/vars.styl"
 #app
   background primary-bg
-  color color1
+  color text-primary
   display flex
   min-height 100vh
   height 100%

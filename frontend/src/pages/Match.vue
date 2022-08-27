@@ -21,11 +21,20 @@ console.log(tender)
 </script>
 
 <style lang="stylus" scoped>
+@import "../assets/vars.styl"
 .matchTenders
   display flex
   width 100%
+  flex-grow 1
   header,footer
+    display flex
+    flex-direction column
+    justify-content end
+    min-width 150px
     button
       width 100%
-    flex-grow 1
+  main
+    border 1px solid secondary-bg
+    display flex
+    width 100%
 </style>
