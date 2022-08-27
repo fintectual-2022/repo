@@ -7,9 +7,11 @@
         "id": "7e86c83e07824e79",
         "type": "leaf",
         "state": {
-          "type": "excalidraw",
+          "type": "markdown",
           "state": {
-            "file": "Wireframe/Homepage.md"
+            "file": "Interface.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -91,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Wireframe/Homepage.md",
+                "file": "Interface.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Wireframe/Homepage.md",
+                "file": "Interface.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Wireframe/Homepage.md"
+                "file": "Interface.md"
               }
             }
           },
@@ -153,15 +155,14 @@
   },
   "active": "7e86c83e07824e79",
   "lastOpenFiles": [
+    "Wireframe/palette.svg",
     "Interface.md",
+    "Wireframe/Homepage.md",
     "Excalidraw/in_progress_scratchbook.excalidraw.md",
     "Pitch Deck/Script Draft.md",
     "Pitch Deck/Presentation video.md",
     "Wireframe/Dashboard.md",
     "Wireframe/Unlock Dashboard.excalidraw.md",
-    "Learn From The Fittest.md",
-    "tenders.md",
-    "Take over the world.md",
-    "Random Ideas.md"
+    "Learn From The Fittest.md"
   ]
 }

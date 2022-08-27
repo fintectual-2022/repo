@@ -21,15 +21,12 @@ import Buyer from "./Tender/Buyer.vue";
 <template lang="pug">
 .container(v-if="tender" :class="{'has-winning-bid':  !!hasWinningBid}")
   .row
-    h1 Tender details
+    h2 {{ tender.title }}
+  .row
+    p {{ tender.description }}
   .row
     .column
-      h2 {{ tender.title }}
-    .column
-      p {{ tender.description }}
-  .row
-    .column
-      p {{ tender.buyers }}
+      p {{ tender?.buyers[0].address.city }}
   //.row
   //  p {{ !!tender.bidDeadline ? format(new Date(tender.bidDeadline), 'dd/MM/yyyy') : 'No bidDeadline' }}
   //.row(v-if="!!winningBid")

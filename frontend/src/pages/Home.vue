@@ -16,15 +16,6 @@
 </script>
 
 <style lang="stylus" scoped>
-.landingPage
-  display flex
-  min-height 100vh
-  height 100%
-  width 100%
-  max-width 100vw
-  background #f4f5f6
-  z-index -2
-
 .background, .foreground
   height: 100%;
   width: 100%;

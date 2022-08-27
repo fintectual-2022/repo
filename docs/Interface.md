@@ -9,3 +9,6 @@ Swipe HOT or NOT on offers
 A list-style display of all items added to collection
 ![[Dashboard]]
 
+## Colors
+![[palette.svg]]
+https://coolors.co/464655-3772ff-b7b6c1-df2935-fdca40
