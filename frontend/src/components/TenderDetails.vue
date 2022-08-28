@@ -21,13 +21,17 @@ import Cpvs from "./Tender/Cpvs.vue";
 import Publications from "./Tender/Publications.vue";
 import Documents from "./Tender/Documents.vue";
 import { countryCodeEmoji } from 'country-code-emoji';
+import LifeHash from 'lifehash-vue'
 </script>
 
 <template lang="pug">
 .tender(v-if="tender" :class="{'has-winning-bid':  !!hasWinningBid}")
   h2 {{ countryCodeEmoji(tender.country) }}
   .row
-    h2 {{ tender.title }}
+    .column-10
+      LifeHash(:input="tender.id")
+    .column
+      h2 {{ tender.title }}
   .row
     p {{ tender.description }}
   .row

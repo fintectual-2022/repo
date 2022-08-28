@@ -12,6 +12,7 @@
     "@vueuse/core": "^9.1.1",
     "country-code-emoji": "^2.3.0",
     "force-graph": "^1.42.13",
+    "lifehash-vue": "^0.1.4",
     "milligram": "^1.4.1",
     "pinia": "^2.0.21",
     "three": "^0.134.0",
