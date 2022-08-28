@@ -431,8 +431,10 @@ export interface Tender {
 		corrections?: Correction[]
 		documentsLocation?: Address4
 		ot?: OpentenderAdditionalInformation1
+
 		[k: string]: unknown
 }
+
 /**
  * Price of tender documents
  */
@@ -482,8 +484,10 @@ export interface Price {
 		 * Maximum reachable value of amountWithVAT
 		 */
 		maxAmountWithVat?: number
+
 		[k: string]: unknown
 }
+
 /**
  * Estimated value of tender lot
  */
@@ -533,8 +537,10 @@ export interface Price1 {
 		 * Maximum reachable value of amountWithVAT
 		 */
 		maxAmountWithVat?: number
+
 		[k: string]: unknown
 }
+
 export interface Price2 {
 		/**
 		 * ISO 4217 of used currency
@@ -581,8 +587,10 @@ export interface Price2 {
 		 * Maximum reachable value of amountWithVAT
 		 */
 		maxAmountWithVat?: number
+
 		[k: string]: unknown
 }
+
 /**
  * Body from whom further information can be obtained
  */
@@ -622,8 +630,10 @@ export interface Buyer {
 		 * Array of Indicators
 		 */
 		indicators?: Indicator[]
+
 		[k: string]: unknown
 }
+
 /**
  * Address of the body seat
  */
@@ -652,25 +662,33 @@ export interface Address {
 		 */
 		nuts?: (string | null)[]
 		ot?: OpentenderAdditionalInformation
+
 		[k: string]: unknown
 }
+
 export interface OpentenderAdditionalInformation {
 		/**
 		 * Cleaned Nuts code
 		 */
 		nutscode?: string
+
 		[k: string]: unknown
 }
+
 export interface MetaData {
 		foundationDate?: string
+
 		[k: string]: unknown
 }
+
 export interface Indicator {
 		value?: IndicatorScore
 		type?: IndicatorType
 		status?: IndicatorStatusType
+
 		[k: string]: unknown
 }
+
 /**
  * Body from whom specifications and additional documents can be obtained
  */
@@ -710,8 +728,10 @@ export interface Buyer1 {
 		 * Array of Indicators
 		 */
 		indicators?: Indicator[]
+
 		[k: string]: unknown
 }
+
 /**
  * Body to whom tenders/requests to participate must be sent
  */
@@ -751,8 +771,10 @@ export interface Buyer2 {
 		 * Array of Indicators
 		 */
 		indicators?: Indicator[]
+
 		[k: string]: unknown
 }
+
 /**
  * The exact address of the tender performance
  */
@@ -781,8 +803,10 @@ export interface Address1 {
 		 */
 		nuts?: (string | null)[]
 		ot?: OpentenderAdditionalInformation
+
 		[k: string]: unknown
 }
+
 /**
  * funding sources used (if none listed, implicitly assuming own budget of the body..)
  */
@@ -799,8 +823,10 @@ export interface Funding {
 		 * Is the source from EU funds?
 		 */
 		isEuFund?: boolean
+
 		[k: string]: unknown
 }
+
 export interface Buyer3 {
 		id?: string
 		isSme?: boolean
@@ -837,8 +863,10 @@ export interface Buyer3 {
 		 * Array of Indicators
 		 */
 		indicators?: Indicator[]
+
 		[k: string]: unknown
 }
+
 /**
  * Identification of buyer: contracting authority or other purchasing body
  */
@@ -878,8 +906,10 @@ export interface Buyer4 {
 		 * Array of Indicators
 		 */
 		indicators?: Indicator[]
+
 		[k: string]: unknown
 }
+
 /**
  * Data on external tender administrator, to whom procedure administration was outsourced (in case it was)
  */
@@ -919,8 +949,10 @@ export interface Buyer5 {
 		 * Array of Indicators
 		 */
 		indicators?: Indicator[]
+
 		[k: string]: unknown
 }
+
 /**
  * Contains info on individual lot
  */
@@ -1026,8 +1058,10 @@ export interface Lot {
 		 */
 		cancellationReason?: string
 		status?: "ANNOUNCED" | "AWARDED" | "CANCELLED" | "PREPARED" | "FINISHED"
+
 		[k: string]: unknown
 }
+
 /**
  * Estimated value of tender lot
  */
@@ -1077,8 +1111,10 @@ export interface Price3 {
 		 * Maximum reachable value of amountWithVAT
 		 */
 		maxAmountWithVat?: number
+
 		[k: string]: unknown
 }
+
 /**
  * The exact address of the tender performance
  */
@@ -1107,8 +1143,10 @@ export interface Address2 {
 		 */
 		nuts?: (string | null)[]
 		ot?: OpentenderAdditionalInformation
+
 		[k: string]: unknown
 }
+
 /**
  * cpv code of the subject
  */
@@ -1125,8 +1163,10 @@ export interface CPV {
 		 * Localized name of cpv
 		 */
 		name?: string
+
 		[k: string]: unknown
 }
+
 export interface Bid {
 		id?: string
 		isWinning?: boolean
@@ -1159,8 +1199,10 @@ export interface Bid {
 		subcontractors?: Bidder[]
 		subcontractedValue?: Price4
 		price?: Price5
+
 		[k: string]: unknown
 }
+
 export interface Bidder {
 		id?: string
 		/**
@@ -1197,8 +1239,10 @@ export interface Bidder {
 		 * Array of Indicators
 		 */
 		indicators?: Indicator[]
+
 		[k: string]: unknown
 }
+
 /**
  * Address of the body seat
  */
@@ -1227,12 +1271,16 @@ export interface Address3 {
 		 */
 		nuts?: (string | null)[]
 		ot?: OpentenderAdditionalInformation
+
 		[k: string]: unknown
 }
+
 export interface MetaData1 {
 		foundationDate?: string
+
 		[k: string]: unknown
 }
+
 export interface UnitPrice {
 		/**
 		 * Number of units
@@ -1242,13 +1290,17 @@ export interface UnitPrice {
 		 * currency
 		 */
 		currency?: string
+
 		[k: string]: unknown
 }
+
 export interface Payment {
 		paymentDate?: TenderDate5
 		price?: Price2
+
 		[k: string]: unknown
 }
+
 /**
  * Value of the tender likely to be subcontracted to third parties
  */
@@ -1298,8 +1350,10 @@ export interface Price4 {
 		 * Maximum reachable value of amountWithVAT
 		 */
 		maxAmountWithVat?: number
+
 		[k: string]: unknown
 }
+
 /**
  * Price
  */
@@ -1349,8 +1403,10 @@ export interface Price5 {
 		 * Maximum reachable value of amountWithVAT
 		 */
 		maxAmountWithVat?: number
+
 		[k: string]: unknown
 }
+
 /**
  * funding sources used (if none listed, implicitly assuming own budget of the body..)
  */
@@ -1367,8 +1423,10 @@ export interface Funding1 {
 		 * Is the source from EU funds?
 		 */
 		isEuFund?: boolean
+
 		[k: string]: unknown
 }
+
 export interface AwardCriterion {
 		/**
 		 * Name of criterion, PRICE if lowest price is used
@@ -1386,8 +1444,10 @@ export interface AwardCriterion {
 		 * Is the criterion directly related to price (monetary measurable)? such as price, lifetime costs, interest etc.
 		 */
 		isPriceRelated?: boolean
+
 		[k: string]: unknown
 }
+
 export interface CPV1 {
 		/**
 		 * CPV code of the subject
@@ -1401,8 +1461,10 @@ export interface CPV1 {
 		 * Localized name of cpv
 		 */
 		name?: string
+
 		[k: string]: unknown
 }
+
 export interface Publication {
 		/**
 		 * Identifier of publication on source
@@ -1450,8 +1512,10 @@ export interface Publication {
 		 */
 		isParentTender?: boolean
 		version?: number
+
 		[k: string]: unknown
 }
+
 /**
  * Metadata on document (.docx, .pdf...)
  */
@@ -1465,8 +1529,10 @@ export interface TenderDocument {
 		publicationDateTime?: TenderDateTime2
 		type?: "CONTRACTOR_AGREEMENT"
 		version?: number
+
 		[k: string]: unknown
 }
+
 /**
  * correction
  */
@@ -1535,8 +1601,10 @@ export interface Correction {
 				netAmount?: number
 				[k: string]: unknown
 		}
+
 		[k: string]: unknown
 }
+
 /**
  * cpv code of the subject
  */
@@ -1553,8 +1621,10 @@ export interface CPV2 {
 		 * Localized name of cpv
 		 */
 		name?: string
+
 		[k: string]: unknown
 }
+
 /**
  * cpv code of the subject
  */
@@ -1571,8 +1641,10 @@ export interface CPV3 {
 		 * Localized name of cpv
 		 */
 		name?: string
+
 		[k: string]: unknown
 }
+
 export interface Address4 {
 		/**
 		 * Raw string for unstructured address
@@ -1598,8 +1670,10 @@ export interface Address4 {
 		 */
 		nuts?: (string | null)[]
 		ot?: OpentenderAdditionalInformation
+
 		[k: string]: unknown
 }
+
 export interface OpentenderAdditionalInformation1 {
 		indicator?: IndicatorsAsFields
 		score?: ScoresAsFields
@@ -1613,8 +1687,10 @@ export interface OpentenderAdditionalInformation1 {
 		 * Country Code: ISO 3166-1 alpha-2 = two letter OR ('EU' == European Institutions)
 		 */
 		country?: string
+
 		[k: string]: unknown
 }
+
 export interface IndicatorsAsFields {
 		INTEGRITY_SINGLE_BID?: IndicatorScore1
 		INTEGRITY_CALL_FOR_TENDER_PUBLICATION?: IndicatorScore1
@@ -1630,18 +1706,23 @@ export interface IndicatorsAsFields {
 		ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE?: IndicatorScore1
 		ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES?: IndicatorScore1
 		TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS?: IndicatorScore1
+
 		[k: string]: unknown
 }
+
 export interface ScoresAsFields {
 		INTEGRITY?: IndicatorScore1
 		ADMINISTRATIVE?: IndicatorScore1
 		TRANSPARENCY?: IndicatorScore1
 		TENDER?: IndicatorScore1
+
 		[k: string]: unknown
 }
+
 export interface IndicatorScores {
 		type?: ScoreType
 		status?: IndicatorStatusType
 		value?: IndicatorScore2
+
 		[k: string]: unknown
 }

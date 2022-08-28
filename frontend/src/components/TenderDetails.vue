@@ -1,29 +1,30 @@
 <script lang="ts" setup>
-import type {Tender, Bid} from "../opentenderSchema";
-interface Props {
-  template: Tender;
-}
-const props = withDefaults(defineProps<Props>(),{})
-const tender = props.template
-// check if the tender has a winning bid
-let winningBid: Ref<Bid | null> = ref(null)
-const hasWinningBid = tender?.lots && tender.lots.some(lot => {
-  return lot?.bids && lot.bids.some(bid => {
-    winningBid.value=bid
-    return bid.isWinning
-  })
-})
-import { ref } from "vue";
-import type { Ref } from 'vue'
+import type {Bid, Tender} from "../opentenderSchema";
+import type {Ref} from 'vue'
+import {ref} from "vue";
 import Buyer from "./Tender/Buyer.vue";
 import Indicators from "./Tender/Indicators.vue";
 import Cpvs from "./Tender/Cpvs.vue";
 import Publications from "./Tender/Publications.vue";
 import Documents from "./Tender/Documents.vue";
-import { countryCodeEmoji } from 'country-code-emoji';
+import {countryCodeEmoji} from 'country-code-emoji';
 import LifeHash from 'lifehash-vue'
 import {getDistance} from "../util/distance";
-</script>
+
+interface Props {
+  template: Tender;
+}
+
+const props = withDefaults(defineProps<Props>(), {})
+const tender = props.template
+// check if the tender has a winning bid
+let winningBid: Ref<Bid | null> = ref(null)
+const hasWinningBid = tender?.lots && tender.lots.some(lot => {
+  return lot?.bids && lot.bids.some(bid => {
+    winningBid.value = bid
+    return bid.isWinning
+  })
+})</script>
 
 <template lang="pug">
 .tender(v-if="tender" :class="{'has-winning-bid':  !!hasWinningBid}")

@@ -5,8 +5,7 @@ Suspense
   router-view
 </template>
 <script setup>
-import Loading from './components/Loading.vue'
-</script>
+import Loading from './components/Loading.vue'</script>
 
 <style lang="stylus">
 @import "assets/vars.styl"

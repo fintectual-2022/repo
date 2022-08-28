@@ -25,6 +25,7 @@
   left: 0;
   top: 0;
   display flex
+
 .foreground
   z-index 1
 </style>

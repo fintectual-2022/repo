@@ -4,16 +4,18 @@ button(onClick="clearData")
 </template>
 
 <script lang="ts" setup>
+import {useMainStore} from '../stores/tenders';
+
 type SwipeDirection = "left" | "right" | "top" | "bottom"
+
 function swipeHandler(dir: SwipeDirection) {
-  if(dir === 'left')
+  if (dir === 'left')
     console.log('liked tender')
-  if(dir === 'right')
+  if (dir === 'right')
     console.log('disliked tender')
 }
 
-import {useMainStore} from '../stores/tenders';
-import {onMounted} from "vue";
+
 const clearData = async () => {
   const store = await useMainStore()
   store.clearData()

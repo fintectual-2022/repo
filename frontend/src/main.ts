@@ -1,26 +1,27 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
-const app = createApp(App)
-
 // global imports
 import './assets/reset.css'
 import 'milligram'
 
 // store
-import { createPinia } from 'pinia';
-app.use(createPinia())
-
+import {createPinia} from 'pinia';
 //router
 import router from "./router";
-app.use(router)
-
 // adds the v-touch directive https://www.npmjs.com/package/vue3-touch-events
 // @ts-ignore
 import Vue3TouchEvents from 'vue3-touch-events';
+// https://troisjs.github.io
+import {TroisJSVuePlugin} from 'troisjs';
+
+const app = createApp(App)
+
+app.use(createPinia())
+
+app.use(router)
+
 app.use(Vue3TouchEvents, {disableClick: true});
 
-// https://troisjs.github.io
-import { TroisJSVuePlugin } from 'troisjs';
 app.use(TroisJSVuePlugin);
 
 // init app

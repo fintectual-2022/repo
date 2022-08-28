@@ -1,6 +1,5 @@
-import { defineStore } from "pinia";
+import {defineStore} from "pinia";
 import {Tender} from "../opentenderSchema";
-import {GraphSchema, GraphLink} from "../schema";
 import {MaybeComputedRef, useStorage} from '@vueuse/core'
 
 export type IState = {
@@ -25,17 +24,17 @@ export const useMainStore = async () => {
 								const data = await fetch('data-cz-2022.json')
 								this.tenders = await data.json()
 						},
-						likeTender(id:String){
+						likeTender(id: String) {
 								// push the id into the liked set
 								// @ts-ignore
 								this.likedIds.add(id)
 						},
-						dislikeTender(id:String){
+						dislikeTender(id: String) {
 								// push the id into the liked set
 								// @ts-ignore
 								this.dislikedIds.add(id)
 						},
-						clearData(){
+						clearData() {
 								// @ts-ignore
 								this.dislikedIds.clear()
 								// @ts-ignore
@@ -44,12 +43,11 @@ export const useMainStore = async () => {
 				},
 
 				getters: {
-						getLikedTenders() : Tender[] | undefined {
+						getLikedTenders(): Tender[] | undefined {
 								// @ts-ignore
-								if(this.likedIds.size <=0){
+								if (this.likedIds.size <= 0) {
 										return undefined
-								}
-								else { // there are liked tenders present
+								} else { // there are liked tenders present
 
 								}
 
