@@ -6,6 +6,8 @@
     router-link( to="/dashboard")
       button Dashboard
     .rangeSelection
+      p You are in:
+        b Prague
       input(type="range" min="5" max="400" v-model="range" id="range")
       label(for="range")
         | {{ range >= 400 ? range + '+' : range }} km
@@ -113,4 +115,26 @@ function like() {
     &.left
       transform: rotate(-15deg) translateX(-10vw) translateY(50vh);
       opacity 0
+
+.rangeSelection
+  display flex
+  align-items center
+  justify-content center
+  p
+    margin-bottom 1rem
+    float left
+    b
+      color text-primary
+      font-size 1.5rem
+  input
+    flex-grow 1
+    float left
+    height 1.5rem
+    border 1px solid secondary-bg
+    border-radius 1rem
+    margin-bottom 1rem
+  p,label
+    display flex
+    justify-content center
+    min-width 150px
 </style>

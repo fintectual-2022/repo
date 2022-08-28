@@ -1,5 +1,5 @@
 <template lang="pug">
-.landingPage
+.landingPage.container
   .branding
     h1 Tendir
   section.cta
@@ -10,11 +10,6 @@
     footer
       i match with hot tenders in your area
 </template>
-
-<script lang="ts" setup>
-import {ref} from "vue"
-const range = ref(0)
-</script>
 
 <style lang="stylus" scoped>
 .landingPage

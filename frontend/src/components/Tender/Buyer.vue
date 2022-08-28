@@ -6,11 +6,16 @@
     p {{ buyer?.contactName }}
     p {{ buyer?.contactPoint }}
     p {{ buyer?.phone }}
-    p {{ buyer?.mainActivities }}
     p {{ buyer?.address }}
+    .activities
+      p Activity
+      p(v-for="activity of buyer?.activities")
+        LifeHash(:input="activity")
+        span {{ activity }}
 </template>
 
 <script lang="ts" setup>
+import LifeHash from "lifehash-vue";
 import type { Buyer4 } from "../../opentenderSchema";
 interface Props {
   template: Buyer4[];
