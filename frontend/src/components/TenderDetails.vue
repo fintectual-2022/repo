@@ -24,7 +24,14 @@ const hasWinningBid = tender?.lots && tender.lots.some(lot => {
     winningBid.value = bid
     return bid.isWinning
   })
-})</script>
+})
+const distance = tender.buyers ? getDistance({
+  city: String(`${tender.buyers[0].address!.city}`),
+  street: String(`${tender.buyers[0].address!.street}`),
+  postcode: String(`${tender.buyers[0].address!.postcode}`),
+  country: String(`${tender.buyers[0].address!.country}`),
+}) : undefined
+</script>
 
 <template lang="pug">
 .tender(v-if="tender" :class="{'has-winning-bid':  !!hasWinningBid}")
@@ -38,8 +45,8 @@ const hasWinningBid = tender?.lots && tender.lots.some(lot => {
   .distance
     .city
       p {{ tender?.buyers[0].address.city }}
-    .range
-      p {{ getDistance({ city: tender.buyers[0].address.city, street: tender.buyers[0].address.street, postcode: tender.buyers[0].address.postcode, country: tender.buyers[0].address.country}) }} km away
+    .range(v-if="distance" )
+      p {{ distance }} km away
   // Some important dates
   .dates
     p {{ tender.awardDeadline }}

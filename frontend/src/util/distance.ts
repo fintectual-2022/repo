@@ -1,4 +1,4 @@
-function withinDistance (address: Address, radius: number): Boolean | undefined {
+export function withinDistance (address: Address, radius: number): Boolean | undefined {
     if (isPrague(address)) {
         return true
     }
@@ -14,7 +14,7 @@ function withinDistance (address: Address, radius: number): Boolean | undefined 
     }
     return undefined;
 }
-function getDistance (address: Address): number | undefined {
+export function getDistance (address: Address): number | undefined {
     if (isPrague(address)) {
         return 4;
     }
