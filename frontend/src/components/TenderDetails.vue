@@ -22,6 +22,7 @@ import Publications from "./Tender/Publications.vue";
 import Documents from "./Tender/Documents.vue";
 import { countryCodeEmoji } from 'country-code-emoji';
 import LifeHash from 'lifehash-vue'
+import {getDistance} from "../util/distance";
 </script>
 
 <template lang="pug">
@@ -35,7 +36,10 @@ import LifeHash from 'lifehash-vue'
   .row
     p {{ tender.description }}
   .row
-    p {{ tender?.buyers[0].address.city }}
+    .column
+      p {{ tender?.buyers[0].address.city }}
+    .column
+      p {{ getDistance({ city: tender.buyers[0].address.city, street: tender.buyers[0].address.street, postcode: tender.buyers[0].address.postcode, country: tender.buyers[0].address.country}) }} km away
   // Category codes
   section(v-if="!!tender.cpvs && tender.cpvs.length >= 0")
     Cpvs(:template="tender.cpvs")

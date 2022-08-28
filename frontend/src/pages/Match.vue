@@ -14,6 +14,7 @@ import {onMounted, reactive, computed, ref, toRefs} from "vue";
 import TenderDetails from "../components/TenderDetails.vue";
 import type {Tender} from "../opentenderSchema";
 import {storeToRefs} from "pinia";
+import {withinDistance} from "../util/distance";
 const store = await useMainStore()
 const { tenders } = storeToRefs(store)
 
@@ -22,7 +23,16 @@ type DragDirection = "left" | "right"
 const dir = ref<DragDirection>('left')
 
 function newTender() {
-  const selectable = tenders.value.find(tender => !store.likedIds.has(tender.id) && !store.dislikedIds.has(tender.id))
+  // filtered pool of tenders
+  const selectable = tenders.value.find(tender =>
+      !store.likedIds.has(tender.id) &&
+      !store.dislikedIds.has(tender.id) &&
+      !!tender.buyers && withinDistance( {
+        city: String(`${tender.buyers[0].address!.city}`),
+        street: String(`${tender.buyers[0].address!.street}`),
+        postcode: String(`${tender.buyers[0].address!.postcode}`),
+        country: String(`${tender.buyers[0].address!.country}`),
+      }, 400))
   // select a random tender from the list
   return selectable ? selectable : tenders.value[Math.floor(Math.random() * tenders.value.length)]
 }

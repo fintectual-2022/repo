@@ -1,4 +1,4 @@
-function withinDistance (address: Address, radius: number): Boolean {
+export function withinDistance (address: Address, radius: number): Boolean {
     if (isPrague(address)) {
         return true
     }
@@ -11,7 +11,7 @@ function withinDistance (address: Address, radius: number): Boolean {
     }
     return false;
 }
-function getDistance (address: Address): number {
+export function getDistance (address: Address): number {
     if (isPrague(address)) {
         return 4;
     }
@@ -22,7 +22,7 @@ function getDistance (address: Address): number {
     return 404;
 }
 function isPrague(address: Address) {
-    return address.city.includes("Prague")
+    return address.city.includes("Prague") || address.city.includes("Praha");
 }
 class Address {
     city: String;
