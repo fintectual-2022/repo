@@ -13,12 +13,14 @@ import {useMainStore} from "../stores/tenders";
 import GraphSettings from "../components/GraphSettings.vue";
 import {storeToRefs} from "pinia";
 import type {GraphSchema} from "../schema";
-const store = await useMainStore()
-const {tenders, likedIds, dislikedIds} = storeToRefs(store)
 import { v4 as uuidv4 } from 'uuid';
 import type {Buyer4} from "../opentenderSchema";
 
+const store = await useMainStore()
+const {tenders, likedIds, dislikedIds} = storeToRefs(store)
+
 // data to nodes and links
+// @ts-ignore
 const liked = [...likedIds.value].map((id: string) => {
   // hydrate from data
   return tenders.value.find((tender: { id: string; }) => id === tender.id)
@@ -52,11 +54,15 @@ function calculateGraph(): GraphSchema {
   nodes.push({
     id: 'pog',
     color: '#3772FF',
+    // @ts-ignore
+
     name: `${likedIds.value.size} Liked Tenders`
   })
   nodes.push({
     id: 'poo',
     color: '#DF2935',
+    // @ts-ignore
+
     name: `${dislikedIds.value.size} Disliked Tenders`
   })
   nodes.push({
@@ -70,6 +76,8 @@ function calculateGraph(): GraphSchema {
     if (node.id !== 'pog' && node.id !== 'poo' && node.id !== '0') // skip self-refference
       links.push({
         source: node.id,
+        // @ts-ignore
+
         target: likedIds.value.has(node.id) ? 'pog' : 'poo'
       })
   }
@@ -108,11 +116,17 @@ function calculateGraph(): GraphSchema {
     })
     // link each buyer to their matching tender
     for(const tender of [...liked, ...disliked]) {
+      // @ts-ignore
+
       if(tender.buyers && tender.buyers.length > 0) {
+        // @ts-ignore
+
         for(const b of tender.buyers) {
           if(b === buyer) {
             links.push({
               source: data.id,
+              // @ts-ignore
+
               target: tender.id
             })
           }
@@ -146,6 +160,7 @@ onMounted(() => {
     Graph(canvas)
         .linkDirectionalParticles(2)
         .warmupTicks(10)
+        // @ts-ignore
         .nodeColor((node) => node.color ? node.color : '#F1F2F6')
         .linkColor(() => '#B7B6C1')
         .width(canvas.clientWidth)
