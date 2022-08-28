@@ -4,3 +4,12 @@ There are no requirements to publish with any specific authority, so a plethora 
 flowchart LR
 company --> publishers --> aggregators
 ```
+// just testing mermaid https://mermaid-js.github.io/mermaid/
+
+
+```mermaid
+flowchart LR  
+    A[Hard edge] -->|Link text| B{Decision}  
+    B -->|One| D[Result one]  
+    B -->|Two| E[Result two]
+```

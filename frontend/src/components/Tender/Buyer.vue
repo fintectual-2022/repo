@@ -1,17 +1,29 @@
 <template lang="pug">
-pre
-  | {{ buyer }}
+.buyers(v-for="buyer of buyers")
+  header
+    p {{ buyer?.buyerType }}
+    p {{ buyer?.name }}
+    p {{ buyer?.contactName }}
+    p {{ buyer?.contactPoint }}
+    p {{ buyer?.phone }}
+    p {{ buyer?.address }}
+    .activities
+      p Activity
+      p(v-for="activity of buyer?.activities")
+        LifeHash(:input="activity")
+        span {{ activity }}
 </template>
 
 <script lang="ts" setup>
-import type { Buyer } from "../../schema";
+import LifeHash from "lifehash-vue";
+import type { Buyer4 } from "../../opentenderSchema";
 interface Props {
-  template: Buyer;
+  template: Buyer4[];
 }
 const props = withDefaults(defineProps<Props>(),{})
-const buyer = props.template
+const buyers = props.template
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 
 </style>

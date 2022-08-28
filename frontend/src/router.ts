@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
+
 const routes = [
 		{
 				path: '/',
@@ -17,6 +18,11 @@ const routes = [
 				path: '/dashboard',
 				name: 'Dashboard',
 				component: () => import(/* webpackChunkName: "graph" */ './pages/Dashboard.vue')
+		},
+		{
+				path: '/debug',
+				name: 'Debug Buttons',
+				component: () => import(/* webpackChunkName: "graph" */ './pages/Debug.vue')
 		},
 		// a dynamic route with a parameter ID that is matched with the ID of the tender
 		// {

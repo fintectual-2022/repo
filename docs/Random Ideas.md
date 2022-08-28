@@ -22,3 +22,8 @@ ie: when a tender is published Jan 1st and ending Feb 1st, the distance would be
 https://standard.open-contracting.org/latest/en/primer/how/
 
 [[Take over the world]]
+
+
+
+convert the CVP1 codes into the according category names
+https://eur-lex.europa.eu/legal-content/CS/TXT/PDF/?uri=CELEX:32008R0213

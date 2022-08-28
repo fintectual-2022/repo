@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "dac193f840bdabce",
+        "id": "7e86c83e07824e79",
         "type": "leaf",
         "state": {
           "type": "excalidraw",
           "state": {
-            "file": "Excalidraw/Drawing 2022-08-26 19.46.40.excalidraw.md"
+            "file": "Wireframe/Unlock Dashboard.md"
           }
         }
       }
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/Drawing 2022-08-26 19.46.40.excalidraw.md",
+                "file": "Wireframe/Unlock Dashboard.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/Drawing 2022-08-26 19.46.40.excalidraw.md",
+                "file": "Wireframe/Unlock Dashboard.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/Drawing 2022-08-26 19.46.40.excalidraw.md"
+                "file": "Wireframe/Unlock Dashboard.md"
               }
             }
           },
@@ -151,17 +151,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "dac193f840bdabce",
+  "active": "7e86c83e07824e79",
   "lastOpenFiles": [
-    "Wireframe/User-flow.excalidraw.png",
-    "Wireframe/Untitled.md",
     "Wireframe/palette.svg",
+    "Wireframe/Dashboard.md",
     "Wireframe/Match.md",
     "Wireframe/Homepage.md",
-    "Wireframe/Dashboard.md",
-    "Application Overview.md",
+    "Pitch Deck/Script Draft.md",
+    "tenders.md",
+    "Take over the world.md",
+    "Random Ideas.md",
     "Learn From The Fittest.md",
-    "Hacking.md",
     "Interface.md"
   ]
 }
