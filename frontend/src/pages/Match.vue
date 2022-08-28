@@ -1,12 +1,22 @@
 <template lang="pug">
-.matchTenders
+.page
   header
-    button(@click="dislike") Dislike ({{ dislikedIds.size }})
-  Transition(name="fade")
-    main(:class="!!isDragged ? dir === 'left' ? 'left' : dir === 'right' ? 'right' : '' : ''" v-if="tender")
-      TenderDetails(:template="tender" :key="tender.id")
-  footer
-    button(@click="like") Like ({{ likedIds.size }})
+    router-link( to="/")
+      button Home
+    router-link( to="/dashboard")
+      button Dashboard
+    .rangeSelection
+      input(type="range" min="5" max="400" v-model="range" id="range")
+      label(for="range")
+        | {{ range >= 400 ? range + '+' : range }} km
+  .matchTenders
+    header
+      button(@click="dislike") Dislike ({{ dislikedIds.size }})
+    Transition(name="fade")
+      main(:class="!!isDragged ? dir === 'left' ? 'left' : dir === 'right' ? 'right' : '' : ''" v-if="tender")
+        TenderDetails(:template="tender" :key="tender.id")
+    footer
+      button(@click="like") Like ({{ likedIds.size }})
 </template>
 
 <script lang="ts" setup>
@@ -15,7 +25,7 @@ import {ref} from "vue";
 import TenderDetails from "../components/TenderDetails.vue";
 import {storeToRefs} from "pinia";
 import {withinDistance} from "../util/distance";
-
+const range = ref(100)
 const store = await useMainStore()
 const {tenders, likedIds, dislikedIds} = storeToRefs(store)
 
@@ -35,7 +45,7 @@ function newTender() {
         street: String(`${tender.buyers[0].address!.street}`),
         postcode: String(`${tender.buyers[0].address!.postcode}`),
         country: String(`${tender.buyers[0].address!.country}`),
-      }, 400))
+      }, range.value))
   // select a random tender from the list
   return selectable ? selectable : tenders.value[Math.floor(Math.random() * tenders.value.length)]
 }

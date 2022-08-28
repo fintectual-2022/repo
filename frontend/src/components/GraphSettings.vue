@@ -2,9 +2,8 @@
 // sidebar in dashboard
 aside
   .column
-    input(type="checkbox" :v-model="isChecked" @change="updateGraph")
-  .column
-  | Show Tags
+    input(type="checkbox" id='tags' :v-model="isChecked" @change="updateGraph")
+    label(for='tags') Show graph
 </template>
 
 <script lang="ts" setup>
@@ -44,9 +43,11 @@ aside
   height 100%
 
 input
+  float left
   display flex
-  width 4rem;
-  height 4rem;
+  width 2rem;
+  padding .5rem
+  height 2rem;
   border 1px solid #9b4dca
   background #1a1a1a
 

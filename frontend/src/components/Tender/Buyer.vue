@@ -1,13 +1,13 @@
 <template lang="pug">
 .buyers(v-for="buyer of buyers")
   header
-    h2 {{ buyer?.buyerType }}
-    h2 {{ buyer?.name }}
-    h2 {{ buyer?.contactName }}
-    h2 {{ buyer?.contactPoint }}
-    h2 {{ buyer?.phone }}
-    h2 {{ buyer?.mainActivities }}
-    h2 {{ buyer?.address }}
+    p {{ buyer?.buyerType }}
+    p {{ buyer?.name }}
+    p {{ buyer?.contactName }}
+    p {{ buyer?.contactPoint }}
+    p {{ buyer?.phone }}
+    p {{ buyer?.mainActivities }}
+    p {{ buyer?.address }}
 </template>
 
 <script lang="ts" setup>

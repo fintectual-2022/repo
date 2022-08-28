@@ -7,11 +7,9 @@
         "id": "7e86c83e07824e79",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "excalidraw",
           "state": {
-            "file": "tenders.md",
-            "mode": "source",
-            "source": false
+            "file": "Wireframe/Unlock Dashboard.md"
           }
         }
       }
@@ -93,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "tenders.md",
+                "file": "Wireframe/Unlock Dashboard.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "tenders.md",
+                "file": "Wireframe/Unlock Dashboard.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tenders.md"
+                "file": "Wireframe/Unlock Dashboard.md"
               }
             }
           },
@@ -155,15 +153,15 @@
   },
   "active": "7e86c83e07824e79",
   "lastOpenFiles": [
+    "Wireframe/palette.svg",
+    "Wireframe/Dashboard.md",
+    "Wireframe/Match.md",
+    "Wireframe/Homepage.md",
+    "Pitch Deck/Script Draft.md",
+    "tenders.md",
     "Take over the world.md",
     "Random Ideas.md",
     "Learn From The Fittest.md",
-    "Interface.md",
-    "Hacking.md",
-    "Application Overview.md",
-    "Wireframe/Untitled.md",
-    "Wireframe/Unlock Dashboard.md",
-    "Wireframe/palette.svg",
-    "Wireframe/Match.md"
+    "Interface.md"
   ]
 }
