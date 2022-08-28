@@ -1,12 +1,12 @@
 import { defineStore } from "pinia";
 import {Tender} from "../opentenderSchema";
 import {GraphSchema, GraphLink} from "../schema";
-import { useStorage } from '@vueuse/core'
+import {MaybeComputedRef, useStorage} from '@vueuse/core'
 
 export type IState = {
 		tenders: Tender[],
-		likedIds: any, // TODO: fix types
-		dislikedIds: any,
+		likedIds: MaybeComputedRef<Set<string>>,
+		dislikedIds: MaybeComputedRef<Set<string>>,
 };
 
 export const useMainStore = async () => {
@@ -16,8 +16,8 @@ export const useMainStore = async () => {
 						({
 								tenders: [],
 								// persisting user data in localstorage
-								likedIds: useStorage('likedIds',new Set()),
-								dislikedIds: useStorage('dislikedIds',new Set()),
+								likedIds: useStorage('likedIds', new Set()),
+								dislikedIds: useStorage('dislikedIds', new Set()),
 						} as IState),
 
 				actions: {
@@ -27,16 +27,25 @@ export const useMainStore = async () => {
 						},
 						likeTender(id:String){
 								// push the id into the liked set
+								// @ts-ignore
 								this.likedIds.add(id)
 						},
 						dislikeTender(id:String){
 								// push the id into the liked set
+								// @ts-ignore
 								this.dislikedIds.add(id)
 						},
+						clearData(){
+								// @ts-ignore
+								this.dislikedIds.clear()
+								// @ts-ignore
+								this.likedIds.clear()
+						}
 				},
 
 				getters: {
 						getLikedTenders() : Tender[] | undefined {
+								// @ts-ignore
 								if(this.likedIds.size <=0){
 										return undefined
 								}

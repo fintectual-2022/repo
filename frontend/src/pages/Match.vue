@@ -1,11 +1,12 @@
 <template lang="pug">
 .matchTenders
   header
-    button(@click="dislike") Dislike
-  main(:class="!!isDragged ? dir === 'left' ? 'left' : dir === 'right' ? 'right' : '' : ''" v-if="!!tender")
-    TenderDetails(:template="tender" :key="tender.id")
+    button(@click="dislike") Dislike ({{ dislikedIds.size }})
+  Transition(name="fade")
+    main(:class="!!isDragged ? dir === 'left' ? 'left' : dir === 'right' ? 'right' : '' : ''" v-if="tender")
+      TenderDetails(:template="tender" :key="tender.id")
   footer
-    button(@click="like") Like
+    button(@click="like") Like ({{ likedIds.size }})
 </template>
 
 <script lang="ts" setup>
@@ -16,7 +17,7 @@ import type {Tender} from "../opentenderSchema";
 import {storeToRefs} from "pinia";
 import {withinDistance} from "../util/distance";
 const store = await useMainStore()
-const { tenders } = storeToRefs(store)
+const { tenders, likedIds, dislikedIds } = storeToRefs(store)
 
 const isDragged = ref(false)
 type DragDirection = "left" | "right"
@@ -42,26 +43,28 @@ const tender = ref(newTender())
 function dislike() {
   store.dislikeTender(tender!.value!.id)
   // update the tender
-  tender.value = newTender()
 
   //animate the dislike
   isDragged.value = true
   dir.value = 'left'
   setTimeout(() => {
     isDragged.value = false
+    tender.value = newTender()
+
   }, 300)
 
 }
 function like() {
   store.likeTender(tender!.value!.id)
   // update the tender
-  tender.value = newTender()
 
   //animate the like
   isDragged.value = true
   dir.value = 'right'
   setTimeout(() => {
     isDragged.value = false
+    tender.value = newTender()
+
   }, 300)
 }
 
@@ -84,12 +87,11 @@ function like() {
     border 1px solid secondary-bg
     display flex
     width 100%
-    transition all 1000ms ease-in-out
-    &.left
-      transform: rotate(15eg);
-      transform: translateX(-10vmin)
+    transition all 300ms ease-in-out
     &.right
-      transform: rotate(-15deg);
-      transform: translateX(10vmin)
-
+      transform: rotate(15deg) translateX(10vw) translateY(50vh);
+      opacity 0
+    &.left
+      transform: rotate(-15deg) translateX(-10vw) translateY(50vh);
+      opacity 0
 </style>

@@ -1,5 +1,6 @@
-<template>
-  <div v-touch:swipe="swipeHandler">Swipe me!</div>
+<template lang="pug">
+button(onClick="clearData")
+  | clearData
 </template>
 
 <script lang="ts" setup>
@@ -9,6 +10,13 @@ function swipeHandler(dir: SwipeDirection) {
     console.log('liked tender')
   if(dir === 'right')
     console.log('disliked tender')
+}
+
+import {useMainStore} from '../stores/tenders';
+import {onMounted} from "vue";
+const clearData = async () => {
+  const store = await useMainStore()
+  store.clearData()
 }
 </script>
 

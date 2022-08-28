@@ -18,6 +18,11 @@ const routes = [
 				name: 'Dashboard',
 				component: () => import(/* webpackChunkName: "graph" */ './pages/Dashboard.vue')
 		},
+		{
+				path: '/debug',
+				name: 'Debug Buttons',
+				component: () => import(/* webpackChunkName: "graph" */ './pages/Debug.vue')
+		},
 		// a dynamic route with a parameter ID that is matched with the ID of the tender
 		// {
 		//     path: '/tender/:id',

@@ -7,9 +7,11 @@
         "id": "7e86c83e07824e79",
         "type": "leaf",
         "state": {
-          "type": "excalidraw",
+          "type": "markdown",
           "state": {
-            "file": "Wireframe/Dashboard.md"
+            "file": "Application Overview.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -91,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Wireframe/Dashboard.md",
+                "file": "Application Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Wireframe/Dashboard.md",
+                "file": "Application Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Wireframe/Dashboard.md"
+                "file": "Application Overview.md"
               }
             }
           },
@@ -153,15 +155,15 @@
   },
   "active": "7e86c83e07824e79",
   "lastOpenFiles": [
-    "Wireframe/Homepage.md",
     "Wireframe/Unlock Dashboard.md",
+    "Wireframe/Untitled.md",
+    "Wireframe/Homepage.md",
+    "Wireframe/Match.md",
+    "Wireframe/palette.svg",
+    "Wireframe/Dashboard.md",
     "Random Ideas.md",
     "Interface.md",
-    "Wireframe/palette.svg",
     "Excalidraw/in_progress_scratchbook.excalidraw.md",
-    "Pitch Deck/Script Draft.md",
-    "Pitch Deck/Presentation video.md",
-    "Wireframe/Dashboard.md",
-    "Learn From The Fittest.md"
+    "Pitch Deck/Script Draft.md"
   ]
 }
