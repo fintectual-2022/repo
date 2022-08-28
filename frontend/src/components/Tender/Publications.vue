@@ -1,5 +1,5 @@
 <template lang="pug">
-.publication(v-for="publication of publications")
+.publication(v-for="publication of publications" :key="publication")
   p {{ publication }}
 </template>
 

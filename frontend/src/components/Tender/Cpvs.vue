@@ -1,5 +1,5 @@
 <template lang="pug">
-.codes(v-for="code of codes")
+.codes(v-for="code of codes" :key="code.code")
   p {{ code }}
   b {{ code.code }}
 </template>

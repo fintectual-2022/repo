@@ -33,18 +33,9 @@ export const useMainStore = async () => {
 								// push the id into the liked set
 								this.dislikedIds.add(id)
 						},
-
 				},
 
 				getters: {
-						getRandomTender(): Tender {
-								// this should make sure we are not displaying the same offer twice.
-								let randomTender
-								do {
-										randomTender = this.tenders[Math.floor(Math.random()*this.tenders.length)]
-								} while(this.dislikedIds.has(randomTender.id) || this.likedIds.has(randomTender.id))
-								return randomTender
-						},
 						getLikedTenders() : Tender[] | undefined {
 								if(this.likedIds.size <=0){
 										return undefined

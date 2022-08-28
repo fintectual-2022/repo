@@ -1,5 +1,5 @@
 <template lang="pug">
-.indicators(v-for="indicator in indicators" )
+.indicators(v-for="indicator in indicators" :key="indicator.type" )
   .column
     | {{indicator.type}}
   .column(:class="indicator.status === 'INSUFFICIENT_DATA' ? 'color3' : indicator.status === 'UNDEFINED' ? 'color2': '' ")

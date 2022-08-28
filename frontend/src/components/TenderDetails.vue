@@ -13,7 +13,7 @@ const hasWinningBid = tender?.lots && tender.lots.some(lot => {
     return bid.isWinning
   })
 })
-import { ref} from "vue";
+import { ref } from "vue";
 import type { Ref } from 'vue'
 import Buyer from "./Tender/Buyer.vue";
 import Indicators from "./Tender/Indicators.vue";

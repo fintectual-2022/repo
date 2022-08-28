@@ -1,5 +1,5 @@
 <template lang="pug">
-.documents(v-for="doc of documents")
+.documents(v-for="doc of documents" :key="doc")
   p {{ doc }}
 </template>
 
