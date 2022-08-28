@@ -1,4 +1,4 @@
-function withinDistance (address: Address, radius: number): Boolean {
+function withinDistance (address: Address, radius: number): Boolean | undefined {
     if (isPrague(address)) {
         return true
     }
@@ -8,10 +8,13 @@ function withinDistance (address: Address, radius: number): Boolean {
         {
             return true;
         }
+        else {
+            return false;
+        }
     }
-    return false;
+    return undefined;
 }
-function getDistance (address: Address): number {
+function getDistance (address: Address): number | undefined {
     if (isPrague(address)) {
         return 4;
     }
@@ -19,7 +22,7 @@ function getDistance (address: Address): number {
         let distance: number = Prague.locations.get(address.city)! * 0.8;
         return distance;
     }
-    return 404;
+    return undefined;
 }
 function isPrague(address: Address) {
     return address.city.includes("Prague")
