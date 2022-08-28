@@ -1,8 +1,12 @@
 <template lang="pug">
-.row
-  .column
+.dashboard
+  .settings
+    router-link(to="/")
+      button Home
+    router-link(to="/match")
+      button Match
     GraphSettings
-  .column
+  .canvas
     #graph(ref="canvas")
 </template>
 
@@ -171,8 +175,19 @@ onMounted(() => {
 </script>
 
 <style lang="stylus" scoped>
+@import "../assets/vars.styl"
 #graph
-  border 1px solid red
+  //border 1px solid red
   overflow hidden
   width 100%
+  height 100%
+.dashboard
+  display flex
+  .settings
+    z-index 1
+    position absolute
+    top:0
+    left:0
+
+    border 1px solid secondary-bg
 </style>

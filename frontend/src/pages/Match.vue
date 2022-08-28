@@ -5,6 +5,11 @@
       button Home
     router-link( to="/dashboard")
       button Dashboard
+    //router-link( to="/dashboard" v-if="canOpenDashboard")
+    //  button(:disabled="!canOpenDashboard")
+    //    | Dashboard
+    //span(v-if="!canOpenDashboard")
+    //  | Like and dislike at least one tender to unlock your dashboard
     .rangeSelection
       p You are in:
         b Prague
@@ -30,6 +35,9 @@ import {withinDistance} from "../util/distance";
 const range = ref(100)
 const store = await useMainStore()
 const {tenders, likedIds, dislikedIds} = storeToRefs(store)
+
+// todo: fix this
+// const canOpenDashboard = likedIds.value.size >= 1 && dislikedIds.value.size >= 1
 
 const isDragged = ref(false)
 type DragDirection = "left" | "right"
@@ -137,4 +145,8 @@ function like() {
     display flex
     justify-content center
     min-width 150px
+
+
+button:disabled
+  color secondary-bg
 </style>
